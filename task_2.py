@@ -7,8 +7,10 @@ def binary_search_with_upper_bound(arr, target):
         iterations += 1
         mid = (left + right) // 2
 
-        # якщо arr[mid] >= target – це можливий upper_bound
-        if arr[mid] >= target:
+        if arr[mid] == target:
+            return iterations, arr[mid]
+
+        if arr[mid] > target:
             upper_bound = arr[mid]
             right = mid - 1
         else:
